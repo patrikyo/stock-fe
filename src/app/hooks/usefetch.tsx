@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import IStock from "../models/interfaces/IStock.interface";
+import IStock from "../interfaces/IStock.interface";
 
 const useFetch = (url: string)=> {
     const [data, setData] = useState<IStock | null>(null);
