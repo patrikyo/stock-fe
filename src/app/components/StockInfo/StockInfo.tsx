@@ -7,7 +7,7 @@ const StockInfo: React.FC<IStockInfoProps> = ({companyName, currentPrice, getSto
             <ul className={Style.stockInfoList}>
                 <li>{companyName}</li>
                 <li>{currentPrice}kr</li>
-                <li><button onClick={()=>getStockInfo("https://stock-api-dh8r.onrender.com/api/stock/SBB-B.ST")} >uppdatera</button></li>
+                <li className={Style.stockInfoItem}><button className={Style.stockInfoBtn} onClick={()=>getStockInfo("https://stock-api-dh8r.onrender.com/api/stock/SBB-B.ST")} >Uppdatera</button></li>
             </ul>
     );
 };

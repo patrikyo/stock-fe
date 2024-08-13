@@ -14,7 +14,8 @@ export default function Home() {
   return (
     <main className={Style.mainContent}>
       <h1>börsdata</h1>
-       { data && <StockInfo companyName={data?.companyName} currentPrice={data?.currentPrice} getStockInfo={getStockInfo}/> }
+      {loading && <p>Laddar...</p>} 
+      { data && <StockInfo companyName={data?.companyName} currentPrice={data?.currentPrice} getStockInfo={getStockInfo}/> }
     </main>
   );
 }
