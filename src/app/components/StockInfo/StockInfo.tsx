@@ -1,6 +1,8 @@
+import IStockInfoProps from "../../interfaces/IStockInfoProps.interface";
 import Style from "./StockInfo.module.css";
 
-const StockInfo = ({companyName, currentPrice, getStockInfo})=> {
+
+const StockInfo: React.FC<IStockInfoProps> = ({companyName, currentPrice, getStockInfo})=> {
     return (    
             <ul className={Style.stockInfoList}>
                 <li>{companyName}</li>
