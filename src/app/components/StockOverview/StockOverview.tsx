@@ -12,9 +12,10 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     return(
         <div>
             { loading && <p>Laddar...</p> }
-            { !loading && <ul className={Style.stockDetailList}>            
-                <li>{data && data.companyName}</li>
-                <li>{data && data.currentPrice} kr</li>
+            { (!loading && data) && <ul className={Style.stockDetailList}>            
+                <li>{data.companyName}</li>
+                <li>pris: {data.currentPrice} kr</li>
+                <li>procent: {data.percentChange}%</li>
                 <li><button className={Style.dataFetchBtn} onClick={()=> getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}>hämta börsdata</button></li>
             </ul>
             }
