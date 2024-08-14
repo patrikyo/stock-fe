@@ -1,0 +1,19 @@
+.stockDetailList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stockDetailItem {
+    text-align: center;
+}
+
+.dataFetchBtn {
+    background-color: #fff;
+    padding: 6%;
+    width: 70%;
+    border-radius: 30px;
+    font-size: 1rem;
+    border: 2px solid #000;
+}
