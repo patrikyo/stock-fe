@@ -1,21 +1,15 @@
 'use client'
-import { useEffect } from "react";
-import StockInfo from "./components/StockInfo/StockInfo";
-import useFetch from "./hooks/usefetch";
 import Style from "./page.module.css"
+import StockOverview from "./components/StockOverview/StockOverview";
 
 export default function Home() {
-    const {data, loading, error, getStockInfo} = useFetch();
-    useEffect(()=> {
-      getStockInfo("https://stock-api-dh8r.onrender.com/api/stock/SBB-B.ST");
-    }, []);
-
-
   return (
-    <main className={Style.mainContent}>
+    <main className={Style.stockContent}>
       <h1>börsdata</h1>
-      {loading && <p>Laddar...</p>} 
-      { data && <StockInfo companyName={data?.companyName} currentPrice={data?.currentPrice} getStockInfo={getStockInfo}/> }
+      <ul className={Style.stockOverviewList}>
+         <li><StockOverview ticker="SBB-B.ST"/></li> 
+         <li><StockOverview ticker="NEOBO.ST"/></li> 
+      </ul>
     </main>
   );
 }

@@ -1,9 +1,16 @@
-.mainContent {
+.stockContent {
     max-width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
+}
+
+.stockOverviewList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
