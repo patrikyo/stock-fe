@@ -18,3 +18,13 @@
 .stockListItem {
     text-align: center;
 }
+
+.positiveIndicator {
+    margin-left: 10px;
+    color: #045b9a;
+}
+
+.negativeIndicator {
+    margin-left: 10px;
+    color: #d0184d;
+}

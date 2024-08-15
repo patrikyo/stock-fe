@@ -1,3 +1,7 @@
+.mainHeader {
+    margin: 0;
+}
+
 .stockContent {
     max-width: 80%;
     margin: 0 auto;
