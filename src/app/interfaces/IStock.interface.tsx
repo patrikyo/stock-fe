@@ -1,7 +1,7 @@
 interface IStock {
     companyName: string;
     currentPrice: string;
-    percentChange: string;
+    percentChange: number;
 };
 
 export default IStock;
