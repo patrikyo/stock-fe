@@ -1,3 +1,7 @@
+.stockOverviewContainer {
+    min-height: 290px;
+}
+
 .stockDetailList {
     list-style: none;
     display: flex;
@@ -27,4 +31,8 @@
 .negativeIndicator {
     margin-left: 10px;
     color: #d0184d;
+}
+
+.stockTimeStamp {
+    font-size: 0.8rem;
 }
