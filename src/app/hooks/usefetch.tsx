@@ -8,6 +8,7 @@ const useFetch = ()=> {
     const [error, setError] = useState(false);
 
     const getStockInfo = (url: string)=> {
+        setLoading(true);
         fetch(url).
         then((resp)=> { 
             if(!resp.ok) {
@@ -16,7 +17,7 @@ const useFetch = ()=> {
                 return resp.json();
             }
         })
-        .then((res)=> setData(res))
+        .then((res)=>{ setData(res)})
         .catch((err)=> setError(err)).
         finally(()=>setLoading(false));
     }

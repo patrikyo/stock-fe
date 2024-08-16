@@ -12,6 +12,8 @@ import {
 
 const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     const {data, loading, error, getStockInfo} = useFetch();
+    const [initialLoad, setInitialLoad] = useState(true);
+
     const indicator = ()=> {
         if(data){
             if(data?.percentChange >= 0) {
@@ -24,22 +26,23 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
 
     useEffect(()=> {
       getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`);
-    }, [data]);
+    }, []);
 
     
 
     return(
-        <>
-            { loading && <p>Laddar...</p> }
-            { (!loading && data) && <ul className={Style.stockDetailList}>            
+        <div className={Style.stockOverviewContainer}>
+            { (loading && initialLoad) && <p>Laddar...</p> }
+            { (data) && <ul className={Style.stockDetailList}>            
                 <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags loga" /></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
-                <li className={Style.stockListItem}><button className={Style.dataFetchBtn} onClick={()=> getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}>hämta börsdata</button></li>
+                { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
+               { (!loading) && <li className={Style.stockListItem}><button className={Style.dataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>hämta börsdata</button></li> }
             </ul>
             }
-        </>
+        </div>
     );
 };
 
