@@ -36,3 +36,8 @@
 .stockTimeStamp {
     font-size: 0.8rem;
 }
+
+.loadingIndicator {
+    color: #777778;
+}
+

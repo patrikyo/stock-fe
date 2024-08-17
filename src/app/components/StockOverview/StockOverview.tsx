@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Style from "./StockOverview.module.css";
 import IStockOverview from "../../interfaces/IStockOverview.interface";
 import Image from "next/image";
+import { Spinner} from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -32,7 +33,7 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
 
     return(
         <div className={Style.stockOverviewContainer}>
-            { (loading && initialLoad) && <p>Laddar...</p> }
+            { (loading && initialLoad) && <Spinner className={Style.loadingIndicator}/> }
             { (data) && <ul className={Style.stockDetailList}>            
                 <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags loga" /></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
@@ -40,7 +41,10 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
                 { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
                { (!loading) && <li className={Style.stockListItem}><button className={Style.dataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>hämta börsdata</button></li> }
+               { (loading) && <li className={Style.stockListItem}><Spinner className={Style.loadingIndicator} /></li> }
+              
             </ul>
+            
             }
         </div>
     );
