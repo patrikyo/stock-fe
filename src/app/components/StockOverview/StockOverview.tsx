@@ -35,20 +35,17 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
         <div className={Style.stockOverviewContainer}>
             { (loading && initialLoad) && <Spinner className={Style.loadingIndicator}/> }
             { (data) && <ul className={Style.stockDetailList}>            
-                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags loga" /></li>
+                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags logga" /></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
-                { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
+               { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
                { (!loading) && <li className={Style.stockListItem}><button className={Style.dataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>hämta börsdata</button></li> }
                { (loading) && <li className={Style.stockListItem}><Spinner className={Style.loadingIndicator} /></li> }
-              
             </ul>
-            
             }
         </div>
     );
 };
 
 export default StockOverview;
-
