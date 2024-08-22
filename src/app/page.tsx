@@ -6,7 +6,9 @@ export default function Home() {
 
   return (
     <main className={Style.stockContent}>
-      <h1 className={Style.mainHeader}>Börsdata</h1>
+      <div className={Style.mainHeaderContainer}>
+        <h1 className={Style.mainHeader}>Börsdata</h1>
+      </div>
       <ul className={Style.stockOverviewList}>
          <li><StockOverview ticker="SBB-B.ST"/></li> 
          <li><StockOverview ticker="SBB-D.ST"/></li> 
