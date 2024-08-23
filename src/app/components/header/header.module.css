@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    text-align: center;
+    background-color: #5858ec;
+    border-radius: 0 0 15px 15px;
+    color: #fff;
+    margin-bottom: 3%;
+}
+
+.header {
+    padding: 5% 0;
+}

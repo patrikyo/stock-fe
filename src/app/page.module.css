@@ -1,14 +1,3 @@
-.mainHeaderContainer {
-    width: 100%;
-    text-align: center;
-    background-color: #5858ec;
-    border-radius: 0 0 15px 15px;
-    color: #fff;
-}
-.mainHeader {
-    margin: 5% 0;
-}
-
 .stockContent {
     max-width: 80%;
     margin: 0 auto;

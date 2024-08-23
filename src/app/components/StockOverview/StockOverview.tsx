@@ -26,13 +26,14 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     }
 
     useEffect(()=> {
-      getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`);
+       getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`);
+      //getStockInfo(`http://127.0.0.1:5000/api/stock/${ticker}`);
     }, []);
 
     
 
     return(
-        <div className={Style.stockOverviewContainer}>
+        <>
             { (loading && initialLoad) && <Spinner className={Style.loadingIndicator}/> }
             { (data) && <ul className={Style.stockDetailList}>            
                 <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags logga" /></li>
@@ -44,7 +45,7 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
                { (loading) && <li className={Style.stockListItem}><Spinner className={Style.loadingIndicator} /></li> }
             </ul>
             }
-        </div>
+        </>
     );
 };
 
