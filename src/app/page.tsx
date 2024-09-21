@@ -5,7 +5,7 @@ import StockOverview from "./components/StockOverview/StockOverview";
 export default function Home() {
 
   return (
-    <main className={Style.stockContent}>
+    <main className={Style.stockContentContainer}>
       <ul className={Style.stockOverviewList}>
          <li><StockOverview ticker="SBB-B.ST"/></li> 
          <li><StockOverview ticker="SBB-D.ST"/></li> 

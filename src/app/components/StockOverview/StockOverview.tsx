@@ -8,8 +8,10 @@ import { Spinner} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronUp,
-  faChevronDown
+  faChevronDown,
+  faChevronRight
 } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     const {data, loading, error, getStockInfo} = useFetch();
@@ -41,7 +43,8 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
                { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
-               { (!loading) && <li className={Style.stockListItem}><button className={Style.dataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>hämta börsdata</button></li> }
+               { (!loading) && <li className={Style.stockListItem}><button className={Style.stockDataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>Uppdatera</button></li> }
+               {!loading &&  <li className={Style.stockListItem}><Link className={Style.stockLink} href={`/stock-detail?ticker=${ticker}`}><span className={Style.stockLinkText}>Detalj vy</span> <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon> </Link></li>}
                { (loading) && <li className={Style.stockListItem}><Spinner className={Style.loadingIndicator} /></li> }
             </ul>
             }

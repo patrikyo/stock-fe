@@ -7,9 +7,10 @@
     border-bottom: 2px solid #b6b6b6;
 }
 
-.dataFetchBtn {
+.stockDataFetchBtn {
     background-color: #fff;
     padding: 6%;
+    margin: 5% 0;
     width: 70%;
     border-radius: 30px;
     font-size: 1rem;
@@ -24,7 +25,7 @@
 
 .positiveIndicator {
     margin-left: 10px;
-    color: #045b9a;
+    color: #15803c;
 }
 
 .negativeIndicator {
@@ -37,6 +38,13 @@
 }
 
 .loadingIndicator {
-    color: #777778;
+    color: #5858ec;
 }
 
+.stockLink {
+    text-decoration: none;
+}
+
+.stockLinkText {
+    margin-right: 2%;
+}
