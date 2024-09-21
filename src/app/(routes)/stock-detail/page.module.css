@@ -1,0 +1,71 @@
+.mainContainer {
+    width: 80%;
+    margin: 10% auto;  
+}
+
+.stockDetailSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20%;
+} 
+
+.stockDetailHeader {
+    color: #5858ec;
+    font-size: 1.2rem;
+}
+
+.stockKeyMetricsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: wrap;
+    gap: 10px;
+}
+
+.loadingIndicator {
+    color: #5858ec;
+    margin: 0 auto;
+}
+
+.alignCenter {
+    text-align: center;
+}
+
+.stockKeyMetricItem {
+    flex: 1;
+    max-width: 30px;
+}
+
+.stockShortValue {
+    color: #636363;
+}
+
+.stockKeyMeteric {
+    color: #5858ec;
+    font-weight: 600;
+}
+
+.stockKeyMetericValue {
+    color: #555555;
+    font-weight: 600;
+}
+
+.backLinkContainer {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.backLinkIcon {
+    color: #0e6efc;
+}
+
+.backLink {
+    text-decoration: none;
+    font-size: 1.1rem;
+}
