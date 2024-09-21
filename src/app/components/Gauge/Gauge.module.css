@@ -1,0 +1,45 @@
+.gauge {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.gaugeBody {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #b4c0be;
+    position: relative;
+    border-top-left-radius: 100% 200%; 
+    border-top-right-radius: 100% 200%; 
+    overflow: hidden; 
+}
+
+.gaugeFill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 100%;
+    background: #a32100;
+    transform-origin: center top;
+    transition: transform 2s ease-out;
+}
+
+.gaugeCover {
+    width: 75%;
+    height: 150%;
+    background: #fafafa;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25%; 
+    color: #555555;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
