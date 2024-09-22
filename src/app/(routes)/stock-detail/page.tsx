@@ -2,8 +2,7 @@
 
 import Gauge from "@/app/components/Gauge/Gauge";
 import Style from "./page.module.css";
-import { useEffect } from "react";
-import { useRouter, useSearchParams} from "next/navigation";
+import { useSearchParams} from "next/navigation";
 import useFetchMetric from "@/app/hooks/useFetchMetrics";
 import Spinner from "react-bootstrap/esm/Spinner";
 import IStockMetrics from "@/app/interfaces/IStockMetrics.interface";
@@ -40,7 +39,7 @@ const StockDetail = () => {
       { !loading && <main className={Style.mainContainer}>
           <section className={Style.stockDetailSection}>
             <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}</span></h2>
-            <Gauge shortValue={data?.shortSelling}/>
+            <Gauge shortValue={data?.shortSelling ? data?.shortSelling : "0"}/>
           </section>
 
           <section className={Style.stockDetailSection}>

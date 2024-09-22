@@ -6,7 +6,7 @@ interface IStockMetrics {
     enterpriseValue: number | "N/A";
     forwardPE: number | "N/A";
     trailingPE: number | "N/A";
-    shortSelling: number; 
+    shortSelling: string | "N/A"; 
 
 };
 

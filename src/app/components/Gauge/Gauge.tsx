@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useRef } from "react";
+import IGauge from "../../interfaces/IGauge.interface" 
 import Style from "./Gauge.module.css"
 
-const Gauge = ({shortValue}) => {
+const Gauge: React.FC<IGauge> = ({shortValue}) => {
     console.log("initial value", shortValue);
-    shortValue = parseFloat(shortValue.replace(",", "."));
+    const shortValueFloat  = parseFloat(shortValue.replace(",", "."));
     console.log("shortValue", shortValue);
     const maxValue = 100;  // Maxvärdet är nu 100
     
@@ -14,18 +15,18 @@ const Gauge = ({shortValue}) => {
     const gaugeCoverRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (gaugeRef.current && shortValue >= 0 && shortValue <= maxValue) {
+        if (gaugeRef.current && shortValueFloat >= 0 && shortValueFloat <= maxValue) {
             // Justera rotation baserat på en skala från 0 till 100
-            const rotation = (shortValue / maxValue) * 180;  // 180° max rotation
+            const rotation = (shortValueFloat / maxValue) * 180;  // 180° max rotation
             if (gaugeFillRef.current) {
                 gaugeFillRef.current.style.transform = `rotate(${rotation}deg)`;  // Använd grader
             }
 
             if (gaugeCoverRef.current) {
-                gaugeCoverRef.current.textContent = `${shortValue}%`;  // Visa värdet 14.5
+                gaugeCoverRef.current.textContent = `${shortValueFloat}%`;  // Visa värdet 14.5
             }
         }
-    }, [shortValue]);
+    }, [shortValueFloat]);
 
     return (
         <div ref={gaugeRef} className={Style.gauge}>
