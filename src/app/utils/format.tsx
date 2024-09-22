@@ -1,5 +1,5 @@
 
-const formatNumber = (num) => {
+const formatNumber = (num: number) => {
     if (num >= 1e9) {
       return `${(num / 1e9).toFixed(1)} B USD`; // Miljarder
     } else if (num >= 1e6) {
@@ -8,7 +8,7 @@ const formatNumber = (num) => {
     return `${num} USD`; // Mindre än en miljon, ingen omvandling
   };
   
-  const formatMetric = (key, value) => {
+  const formatMetric = (key: string, value: number) => {
     if (typeof value === "number") {
       switch (key) {
         case "enterpriseValue":
