@@ -8,7 +8,7 @@ const formatNumber = (num: number) => {
     return `${num} USD`; // Mindre än en miljon, ingen omvandling
   };
   
-  const formatMetric = (key: string, value: number) => {
+  const formatMetric = (key: string, value: number | string) => {
     if (typeof value === "number") {
       switch (key) {
         case "enterpriseValue":
