@@ -4,7 +4,8 @@
 
   import "@fortawesome/fontawesome-svg-core/styles.css";
   import { config } from "@fortawesome/fontawesome-svg-core";
-import Header from "./components/Header/Header";
+  import Header from "@/app/components/Header/Header";
+
   config.autoAddCss = false;
 
   const inter = Inter({ subsets: ["latin"] });
