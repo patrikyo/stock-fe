@@ -4,7 +4,7 @@
 
   import "@fortawesome/fontawesome-svg-core/styles.css";
   import { config } from "@fortawesome/fontawesome-svg-core";
-  import Header from "@/app/components/header/header";
+import Header from "./components/Header/Header";
 
   config.autoAddCss = false;
 
