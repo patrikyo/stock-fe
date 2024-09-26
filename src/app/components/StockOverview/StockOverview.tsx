@@ -30,7 +30,7 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     useEffect(()=> {
        getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`);
        setInitialLoad(false);
-      //getStockInfo(`http://127.0.0.1:5000/api/stock/${ticker}`);
+    //   getStockInfo(`http://127.0.0.1:5000/api/stock/${ticker}`);
     }, [ticker, getStockInfo]);
 
     
