@@ -37,17 +37,21 @@ const StockDetailContent = () => {
 
   return (
     <main className={Style.mainContainer}>
-      <section className={Style.stockDetailSection}>
-        <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}</span></h2>
-        <Gauge shortValue={data?.shortSelling ? data?.shortSelling : "0"} />
-      </section>
-
-      <section className={Style.stockDetailSection}>
+      { loading && <div className={Style.centerContent}><Spinner className={Style.loadingIndicator}> </Spinner> </div> }
+      {!loading &&  <section className={Style.stockDetailSection}>
+          <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}%</span></h2>
+          <Gauge shortValue={data?.shortSelling ? data?.shortSelling : "0"} />
+        </section>
+      } 
+      
+      { loading && <div className={Style.centerContent}><Spinner className={Style.loadingIndicator}> </Spinner> </div> }
+      { !loading &&  <section className={Style.stockDetailSection}>
         <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
         <ul className={Style.stockKeyMetricsList}>
           {data && getMetricsList(data)}
         </ul>
       </section>
+      }
 
       <div className={Style.backLinkContainer}>
         <span><FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> <Link className={Style.backLink} href="/">Tillbaka</Link></span>
