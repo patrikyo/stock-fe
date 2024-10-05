@@ -12,7 +12,18 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 20px;
     padding: 0;
     margin: 0;
+}
+
+.addStockLinkContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #0d6efd;
+}
+
+.addStockBtn {
+    height: 80px;
 }

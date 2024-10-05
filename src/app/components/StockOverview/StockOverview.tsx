@@ -9,10 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronUp,
   faChevronDown,
-  faChevronRight
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-
 const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     const {data, loading, error, getStockInfo} = useFetch();
     const [initialLoad, setInitialLoad] = useState(true);
@@ -38,8 +37,9 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     return(
         <>
             { (loading && initialLoad) && <Spinner className={Style.loadingIndicator}/> }
-            { (data) && <ul className={Style.stockDetailList}>            
-                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={100} height={80} alt="bolags logga" /></li>
+            { (data) && 
+            <ul className={Style.stockDetailList}>            
+                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} layout="responsive" width={125} height={125} alt="bolags logga" className={Style.stockLogoImg}/></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>

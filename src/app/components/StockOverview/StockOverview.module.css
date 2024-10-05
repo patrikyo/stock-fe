@@ -48,3 +48,9 @@
 .stockLinkText {
     margin-right: 2%;
 }
+
+.stockLogoImg {
+  max-width: 125px; 
+  max-height: 125px;
+  object-fit: contain;
+}
