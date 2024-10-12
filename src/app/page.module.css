@@ -1,11 +1,12 @@
 .stockContentContainer {
     max-width: 80%;
     margin: 0 auto;
+}
+
+.addStockContainer {
+    margin: 5% 0;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
     justify-content: center;
-    align-items: center;
 }
 
 .stockOverviewList {
@@ -19,11 +20,24 @@
 
 .addStockLinkContainer {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 5px;
     color: #0d6efd;
+    text-decoration: none;
 }
 
 .addStockBtn {
-    height: 80px;
+    height: 25px;
+}
+
+.loadingIndicatorContainer {
+   display: flex;
+   height: 50vh;
+   justify-content: center;
+   align-items: center;
+} 
+
+.loadingIndicator {
+    color: #5858ec;
+    scale: 4;   
 }
