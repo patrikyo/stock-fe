@@ -7,12 +7,13 @@ import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { Spinner } from "react-bootstrap";
+import IStockProp from "@/app/interfaces/IStockProp.interface";
 
 
-const AddStock = ({ticker})=> {
+const AddStock: React.FC<IStockProp> = ({ticker})=> {
     const {data, loading, error, getStockInfo} = useFetch();
 
-    const persistStock = (ticker: string)=> {
+    const persistStock = (ticker: string): void=> {
         localStorage.setItem(ticker, ticker);
     }
 
