@@ -39,7 +39,7 @@ export default function Home() {
 
       { loading &&  <div className={Style.loadingIndicatorContainer}><Spinner className={Style.loadingIndicator}/></div>}
       
-      {/*Lista på börsbolag man följer*/}
+      { /*Lista på börsbolag man följer*/ }
       { !loading && <ul className={Style.stockOverviewList}>
         {stocks.map((ticker: string, index: number) => (
           <li key={index}>
@@ -47,7 +47,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
-}
+      }
     </main>
   );
 }
