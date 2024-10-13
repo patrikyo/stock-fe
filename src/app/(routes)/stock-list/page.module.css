@@ -22,3 +22,18 @@
     object-fit: contain;
 }
 
+.backLinkContainer {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.backLinkIcon {
+    color: #0e6efc;
+    margin-right: 5px;
+}
+
+.backLink {
+    text-decoration: none;
+    font-size: 1.1rem;
+}

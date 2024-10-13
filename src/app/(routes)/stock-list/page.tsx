@@ -3,6 +3,10 @@ import Style from "./page.module.css";
 import stocks from "../../data/stocks.json"
 import StockOverview from "@/app/components/StockOverview/StockOverview";
 import Stock from "@/app/components/stock/stock";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const StockList = ()=> {
     return(
@@ -10,6 +14,12 @@ const StockList = ()=> {
            <ul className={Style.stockList}>
                 { stocks.tickers.map((ticker, index)=> <li key={index}><Stock ticker={ticker}/></li>) }
            </ul>
+           <div className={Style.backLinkContainer}>
+                <span>
+                    <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
+                    <Link className={Style.backLink} href="/">Tillbaka</Link>
+                </span>
+      </div>
         </main>
     );
 };
