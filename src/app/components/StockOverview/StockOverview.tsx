@@ -26,27 +26,74 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
         }
     }
 
+    const loadingIndicator = ()=> {
+        console.log("laoding", loading);
+        if(loading) {
+           return(
+           <span className={Style.loadingContainerShow}>
+              {  loading && <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+                />
+              }
+           </span>);
+        } else {
+            return(
+            <span className={Style.loadingContainerHide}>
+                { <Spinner
+                    as="span"
+                    animation="grow"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                    />
+                }
+            </span>
+            );
+        }
+    };
+
     useEffect(()=> {
        getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`);
-       setInitialLoad(false);
     //   getStockInfo(`http://127.0.0.1:5000/api/stock/${ticker}`);
     }, [ticker, getStockInfo]);
 
     
-
+//<Spinner className={Style.loadingIndicator}/>
     return(
         <>
-            { (loading && initialLoad) && <Spinner className={Style.loadingIndicator}/> }
-            { (data) && 
+         { (loading && initialLoad) && 
+            <div className={Style.skeletonLoader}>
+                <div className={Style.skeletonImage}></div>
+                <div className={Style.skeletonTitle}></div>
+                <div className={Style.skeletonPrice}></div> 
+                <div className={Style.skeletonProcentage}></div>
+                <div className={Style.skeletonUpdateTime}></div>
+                <div className={Style.skeletonBtn}></div>
+                <div className={Style.skeletonLink}></div>
+            </div>}
+         { (data) && 
             <ul className={Style.stockDetailList}>            
                 <li className={Style.stockListItem}><Image src={`/${ticker}.png`} layout="responsive" width={125} height={125} alt="bolags logga" className={Style.stockLogoImg}/></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
-               { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}> <span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
-               { (!loading) && <li className={Style.stockListItem}><button className={Style.stockDataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}>Uppdatera</button></li> }
-               {!loading &&  <li className={Style.stockListItem}><Link className={Style.stockLink} href={`/stock-detail?ticker=${ticker}`}><span className={Style.stockLinkText}>Detalj vy</span> <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon> </Link></li>}
-               { (loading) && <li className={Style.stockListItem}><Spinner className={Style.loadingIndicator} /></li> }
+               { !data.lastUpdated.includes("00:00:00") && <li className={Style.stockListItem}><span className={Style.stockTimeStamp}>hämtades: {data.lastUpdated}</span></li> }
+               <li className={Style.stockListItem}>
+                <button className={Style.stockDataFetchBtn} onClick={()=>{ setInitialLoad(false); getStockInfo(`https://stock-api-dh8r.onrender.com/api/stock/${ticker}`)}}> 
+                    {loadingIndicator()}
+                    <span className={Style.stockDataFetchBtnText}>Uppdatera</span>
+                </button>
+              </li>
+              <li className={Style.stockListItem}>
+                <Link className={Style.stockLink} href={`/stock-detail?ticker=${ticker}`}>
+                    <span className={Style.stockLinkText}>Detalj vy</span> 
+                    <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon> 
+                    </Link>
+                </li>
             </ul>
             }
         </>
