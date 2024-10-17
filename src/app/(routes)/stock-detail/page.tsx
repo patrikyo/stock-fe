@@ -54,7 +54,8 @@ const StockDetailContent = () => {
       }
 
       <div className={Style.backLinkContainer}>
-        <span><FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> <Link className={Style.backLink} href="/">Tillbaka</Link></span>
+        <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
+        <Link className={Style.backLink} href="/">Tillbaka</Link>
       </div>
     </main>
   );

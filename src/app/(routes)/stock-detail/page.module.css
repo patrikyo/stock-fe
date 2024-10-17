@@ -59,6 +59,11 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .backLinkIcon {

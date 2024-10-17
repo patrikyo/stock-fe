@@ -15,10 +15,8 @@ const StockList = ()=> {
                 { stocks.tickers.map((ticker, index)=> <li key={index}><Stock ticker={ticker}/></li>) }
            </ul>
            <div className={Style.backLinkContainer}>
-                <span>
                     <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
                     <Link className={Style.backLink} href="/">Tillbaka</Link>
-                </span>
       </div>
         </main>
     );
