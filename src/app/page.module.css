@@ -21,13 +21,20 @@
 .addStockLinkContainer {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 10px;
     color: #0d6efd;
     text-decoration: none;
+    background-color: #3e63dd;
+    padding: 15px 30px;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 500;
+    align-items: center;
 }
 
 .addStockBtn {
-    height: 25px;
+    height: 30px;
+    
 }
 
 .loadingIndicatorContainer {
