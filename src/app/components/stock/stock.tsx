@@ -29,8 +29,14 @@ const AddStock: React.FC<IStockProp> = ({ticker})=> {
                 <li>
                     <h2 className={Style.stockHeader}>{data?.companyName}</h2>
                     <ul className={Style.stockList}>
-                        <li><Image src={`/${ticker}.png`} className={Style.stockImage} width={100} height={100} alt="logo"></Image></li>
-                        <li><button className={Style.stockAddBtn} onClick={()=> persistStock(ticker)}><FontAwesomeIcon className={Style.addStockIcon} icon={faPlusCircle} aria-hidden="true"/><span className={Style.addStockCopy}>Lägg till aktie</span></button></li>
+                    <li className={Style.stockListItem}><Image src={`/${ticker}.png`} layout="responsive" width={125} height={125} alt="bolags logga" className={Style.stockLogoImg}/></li>
+                        <li>
+                            <button className={Style.addStockContainer} onClick={()=> persistStock(ticker)}>
+                                <FontAwesomeIcon className={Style.addStockBtn} icon={faPlusCircle} aria-hidden="true"/> 
+                                <span>Lägg till bolag</span>
+                            </button>
+                        </li>
+                    
                     </ul>
                 </li>
                 <hr className={Style.stockDivider}/>

@@ -9,13 +9,14 @@
 
 .stockHeader {
     font-size: 1.2rem;
+    text-align: center;
 }
 
-.stockImage {
+.stockLogoImg {
     max-width: 125px; 
     max-height: 125px;
     object-fit: contain;
-}
+  }
 
 .addStockIcon {
     height: 30px;
@@ -49,4 +50,27 @@
     color: #5858ec;
     scale: 1.3;    
     margin-bottom: 20px;
+}
+
+
+
+.addStockContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #0d6efd;
+    text-decoration: none;
+    background-color: #3e63dd;
+    padding: 15px 30px;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 500;
+    align-items: center;
+    border: none;
+    margin: 15px 0;
+}
+
+.addStockBtn {
+    height: 30px;
+    
 }
