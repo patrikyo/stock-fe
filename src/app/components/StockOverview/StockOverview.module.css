@@ -6,8 +6,8 @@
 }
 
 .skeletonImage {
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto;
     margin-bottom: 12px;
     border-radius: 10px;
@@ -42,7 +42,7 @@
     background-color: rgb(201, 201, 201);
     margin: 20px auto;
     width: 80%;
-    min-height: 80px;
+    min-height: 56px;
     border-radius: 30px;
     border: 0px solid #5858ec;
 }
@@ -78,6 +78,15 @@
     text-align: center;
 }
 
+.stockListItem > img {
+    padding: 0 10px;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
+    border-radius: 10px;
+    margin-bottom: 8%;
+
+}
+
 .positiveIndicator {
     margin-left: 10px;
     color: #15803c;
@@ -107,8 +116,6 @@
 }
 
 .stockLogoImg {
-  max-width: 125px; 
-  max-height: 125px;
   object-fit: contain;
 }
 

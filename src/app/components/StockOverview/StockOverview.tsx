@@ -77,7 +77,7 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
             </div>}
          { (data) && 
             <ul className={Style.stockDetailList}>            
-                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} layout="responsive" width={125} height={125} alt="bolags logga" className={Style.stockLogoImg}/></li>
+                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={150} height={150} alt="bolags logga" className={Style.stockLogoImg}/></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>
