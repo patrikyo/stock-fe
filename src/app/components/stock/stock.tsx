@@ -25,7 +25,7 @@ const AddStock: React.FC<IStockProp> = ({ticker})=> {
         <div>
             {loading && <Spinner className={Style.loadingIndicator}/>}
             {!loading && 
-            <ul className={Style.stockList}>
+            <ul className={Style.stockListContainer}>
                 <li>
                     <h2 className={Style.stockHeader}>{data?.companyName}</h2>
                     <ul className={Style.stockList}>

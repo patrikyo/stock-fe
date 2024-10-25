@@ -9,3 +9,10 @@
 .headerTitle {
     padding: 5% 0;
 }
+
+
+@media screen and (min-width: 1400px) {
+    .header {
+        margin-bottom: 2%;
+    }
+}

@@ -1,23 +1,27 @@
-.stockList {
+.stockListContainer, .stockList {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
+}
+
+.stockList {
+    gap: 30px;
 }
 
 .stockHeader {
     font-size: 1.2rem;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .stockListItem {
-    padding: 0 10px;
     background-color: #fafafa;
     box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
     border-radius: 10px;
-    margin: 10% 0;
 }
 
 .stockLogoImg {
@@ -52,6 +56,7 @@
 .stockDivider {
     width: 70vw;
     border-top: 3px solid #b6b6b6;
+    margin: 0;
 }
 
 .loadingIndicator {
@@ -59,7 +64,6 @@
     scale: 1.3;    
     margin-bottom: 20px;
 }
-
 
 .addStockContainer {
     display: flex;
@@ -74,10 +78,8 @@
     font-weight: 500;
     align-items: center;
     border: none;
-    margin: 15px 0;
 }
 
 .addStockBtn {
     height: 30px;
-    
 }

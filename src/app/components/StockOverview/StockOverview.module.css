@@ -83,7 +83,7 @@
     background-color: #fafafa;
     box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
     border-radius: 10px;
-    margin-bottom: 8%;
+    margin-bottom: 2%;
 
 }
 
@@ -127,4 +127,21 @@
     visibility: hidden;
     margin-right: 2%;
 
+}
+
+/*XXL screen*/
+@media screen and (min-width: 1400px) {
+    .stockDataFetchBtn {
+        padding: 2% 4%;
+        margin: 1% 0;
+        width: 30%;
+    }
+
+    .stockListItem > img {
+        margin-bottom: 1.5%;
+    }
+    
+    .stockDetailList {
+        padding: 4%;
+    }
 }

@@ -1,6 +1,7 @@
 .stockContentContainer {
     max-width: 80%;
     margin: 0 auto;
+    max-width: 852px;
 }
 
 .addStockContainer {
@@ -34,7 +35,6 @@
 
 .addStockBtn {
     height: 30px;
-    
 }
 
 .loadingIndicatorContainer {
@@ -47,4 +47,36 @@
 .loadingIndicator {
     color: #5858ec;
     scale: 4;   
+}
+
+
+/*XXL screen*/
+@media screen and (min-width: 1400px) {
+   .addStockContainer {
+        margin: 0;
+        margin-bottom: 3%;
+   }
+
+   .addStockLinkContainer {
+        gap: 10px;
+        padding: 1.5% 3%;
+    }
+
+    .addStockBtn {
+        height: 20px;
+    }
+
+    .stockOverviewList {
+        gap: 0;
+    }
+
+    .loadingIndicator {
+        scale: 3;
+    }
+}
+/*XXL screen*/
+@media screen and (max-width: 1400px) {
+    .stockContentContainer {
+        margin: 2% auto;
+    }
 }
