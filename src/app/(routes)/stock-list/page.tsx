@@ -17,7 +17,7 @@ const StockList = ()=> {
            <div className={Style.backLinkContainer}>
                     <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
                     <Link className={Style.backLink} href="/">Tillbaka</Link>
-      </div>
+            </div>
         </main>
     );
 };

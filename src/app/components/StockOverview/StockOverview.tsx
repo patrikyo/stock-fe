@@ -12,6 +12,8 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Logo from "../Logo/logo";
+
 const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
     const {data, loading, error, getStockInfo} = useFetch();
     const [initialLoad, setInitialLoad] = useState(true);
@@ -77,7 +79,7 @@ const StockOverview: React.FC<IStockOverview> = ({ticker})=> {
             </div>}
          { (data) && 
             <ul className={Style.stockDetailList}>            
-                <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={150} height={150} alt="bolags logga" className={Style.stockLogoImg}/></li>
+                <li className={Style.stockListItem}><Logo ticker={ticker}/></li>
                 <li className={Style.stockListItem}>{data.companyName}</li>
                 <li className={Style.stockListItem}>pris: {data.currentPrice} kr</li>
                 <li className={Style.stockListItem}>{indicator()} {data.percentChange}%</li>

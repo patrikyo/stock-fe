@@ -24,12 +24,6 @@
     border-radius: 10px;
 }
 
-.stockLogoImg {
-    max-width: 150px; 
-    max-height: 150px;
-    object-fit: contain;
-  }
-
 .addStockIcon {
     height: 30px;
     color: #0d6efd;

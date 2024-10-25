@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { Spinner } from "react-bootstrap";
 import IStockProp from "@/app/interfaces/IStockProp.interface";
+import Logo from "../Logo/logo";
 
 
 const AddStock: React.FC<IStockProp> = ({ticker})=> {
@@ -29,8 +30,7 @@ const AddStock: React.FC<IStockProp> = ({ticker})=> {
                 <li>
                     <h2 className={Style.stockHeader}>{data?.companyName}</h2>
                     <ul className={Style.stockList}>
-                    <li className={Style.stockListItem}><Image src={`/${ticker}.png`} width={150} height={150} alt="bolags logga" className={Style.stockLogoImg}/></li>
-
+                    <li className={Style.stockListItem}><Logo ticker={ticker}/></li>
                         <li>
                             <button className={Style.addStockContainer} onClick={()=> persistStock(ticker)}>
                                 <FontAwesomeIcon className={Style.addStockBtn} icon={faPlusCircle} aria-hidden="true"/> 

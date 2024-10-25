@@ -78,15 +78,6 @@
     text-align: center;
 }
 
-.stockListItem > img {
-    padding: 0 10px;
-    background-color: #fafafa;
-    box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
-    border-radius: 10px;
-    margin-bottom: 2%;
-
-}
-
 .positiveIndicator {
     margin-left: 10px;
     color: #15803c;
@@ -115,10 +106,6 @@
     margin-right: 2%;
 }
 
-.stockLogoImg {
-  object-fit: contain;
-}
-
 .loadingContainerShow {
     margin-right: 2%;
 }
@@ -137,10 +124,6 @@
         width: 30%;
     }
 
-    .stockListItem > img {
-        margin-bottom: 1.5%;
-    }
-    
     .stockDetailList {
         padding: 4%;
     }
