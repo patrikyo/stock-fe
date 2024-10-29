@@ -1,4 +1,4 @@
-'use client';  // Detta säkerställer att det är en Client Component
+'use client';  // Ensures this is a Client Component
 
 import Gauge from "@/app/components/Gauge/Gauge";
 import Style from "./page.module.css";
@@ -11,7 +11,25 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from "react";
 
-const StockDetail = () => {
+const SkeletonLoader = () => (
+  <>
+    <div className={Style.skelotonHeaderOne}></div>
+    <div className={Style.skeletonGauge}></div>
+    <div className={Style.skeletonHeaderTwo}></div>
+    <ul className={Style.skeletonList}>
+      {[...Array(8)].map((_, i) => (
+        <li key={i} className={Style.skeletonStockKeyMetricsList}>
+          <span className={Style.skeletonStockKeyMeteric}></span>
+          <span className={Style.skeletonStockKeyMetericValue}></span>
+        </li>
+      ))}
+    </ul>
+    <div className={Style.skeletonBackLinkIcon}></div>
+    <div className={Style.skeletonBackLink}></div>
+  </>
+);
+
+const StockDetailContent = () => {
   const searchParams = useSearchParams();
   const ticker: string | null = searchParams.get('ticker');
   const { data, loading, error } = useFetchMetric(ticker);
@@ -26,8 +44,8 @@ const StockDetail = () => {
             </li>
           );
         }
-        return null; // Returnera null för "N/A"
-      }).filter(item => item !== null); // Filtrera bort null-värden
+        return null;
+      }).filter(item => item !== null);
 
       return metricsList;
     }
@@ -35,45 +53,37 @@ const StockDetail = () => {
   };
 
   return (
-    <main className={Style.mainContainer}>
-      { loading && (
+    <>
+      {loading ? (
+        <SkeletonLoader />
+      ) : data && (
         <>
-          <div className={Style.skelotonHeaderOne}></div>
-          <div className={Style.skeletonGauge}></div>
-          <div className={Style.skeletonHeaderTwo}></div>
-          <ul>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
-          </ul> 
-          <div className={Style.skeletonBackLinkIcon}></div><div className={Style.skeletonBackLink}></div>
-
+          <section className={Style.stockDetailSection}>
+            <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}%</span></h2>
+            <Gauge shortValue={data?.shortSelling || "0"} />
+          </section>
+          <section className={Style.stockDetailSection}>
+            <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
+            <ul className={Style.stockKeyMetricsList}>
+              {getMetricsList(data)}
+            </ul>
+          </section>
+          <div className={Style.backLinkContainer}>
+            <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} />
+            <Link className={Style.backLink} href="/">Tillbaka</Link>
+          </div>
         </>
-      )
-      }
-      {!loading && 
-      <>
-        <section className={Style.stockDetailSection}>
-          <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}%</span></h2>
-          <Gauge shortValue={data?.shortSelling ? data?.shortSelling : "0"} />
-        </section>
-        <section className={Style.stockDetailSection}>
-          <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
-          <ul className={Style.stockKeyMetricsList}>
-            {data && getMetricsList(data)}
-          </ul>
-        </section>
-        <div className={Style.backLinkContainer}>
-          <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
-          <Link className={Style.backLink} href="/">Tillbaka</Link>
-        </div>
-      </>
-      } 
+      )}
+    </>
+  );
+};
+
+const StockDetail = () => {
+  return (
+    <main className={Style.mainContainer}>
+      <Suspense fallback={<SkeletonLoader />}>
+        <StockDetailContent />
+      </Suspense>
     </main>
   );
 };

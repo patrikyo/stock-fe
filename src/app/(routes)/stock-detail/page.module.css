@@ -21,6 +21,10 @@
     margin: 0 auto calc(0.5rem + 10px) auto;
 }
 
+.skeletonList {
+    margin-bottom: 40px;
+}
+
 .skeletonStockKeyMetricsList {
     display: flex;
     justify-content: flex-start;
