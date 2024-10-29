@@ -45,7 +45,7 @@
 }
 
 /*XXL screen*/
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 576px) {
     .mainContainer {
         width: 50%;
         margin: 2% auto;

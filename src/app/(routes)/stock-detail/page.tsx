@@ -4,7 +4,6 @@ import Gauge from "@/app/components/Gauge/Gauge";
 import Style from "./page.module.css";
 import { useSearchParams } from "next/navigation";
 import useFetchMetric from "@/app/hooks/useFetchMetrics";
-import Spinner from "react-bootstrap/esm/Spinner";
 import IStockMetrics from "@/app/interfaces/IStockMetrics.interface";
 import { formatMetric, translateMetric } from "@/app/utils/format";
 import Link from "next/link";
@@ -12,7 +11,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Suspense } from "react";
 
-const StockDetailContent = () => {
+const StockDetail = () => {
   const searchParams = useSearchParams();
   const ticker: string | null = searchParams.get('ticker');
   const { data, loading, error } = useFetchMetric(ticker);
@@ -37,35 +36,45 @@ const StockDetailContent = () => {
 
   return (
     <main className={Style.mainContainer}>
-      { loading && <div className={Style.centerContent}><Spinner className={Style.loadingIndicator}> </Spinner> </div> }
-      {!loading &&  <section className={Style.stockDetailSection}>
+      { loading && (
+        <>
+          <div className={Style.skelotonHeaderOne}></div>
+          <div className={Style.skeletonGauge}></div>
+          <div className={Style.skeletonHeaderTwo}></div>
+          <ul>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+            <li className={Style.skeletonStockKeyMetricsList}><span className={Style.skeletonStockKeyMeteric}></span><span className={Style.skeletonStockKeyMetericValue}></span></li>
+          </ul> 
+          <div className={Style.skeletonBackLinkIcon}></div><div className={Style.skeletonBackLink}></div>
+
+        </>
+      )
+      }
+      {!loading && 
+      <>
+        <section className={Style.stockDetailSection}>
           <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}%</span></h2>
           <Gauge shortValue={data?.shortSelling ? data?.shortSelling : "0"} />
         </section>
+        <section className={Style.stockDetailSection}>
+          <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
+          <ul className={Style.stockKeyMetricsList}>
+            {data && getMetricsList(data)}
+          </ul>
+        </section>
+        <div className={Style.backLinkContainer}>
+          <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
+          <Link className={Style.backLink} href="/">Tillbaka</Link>
+        </div>
+      </>
       } 
-      
-      { loading && <div className={Style.centerContent}><Spinner className={Style.loadingIndicator}> </Spinner> </div> }
-      { !loading &&  <section className={Style.stockDetailSection}>
-        <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
-        <ul className={Style.stockKeyMetricsList}>
-          {data && getMetricsList(data)}
-        </ul>
-      </section>
-      }
-
-      <div className={Style.backLinkContainer}>
-        <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} /> 
-        <Link className={Style.backLink} href="/">Tillbaka</Link>
-      </div>
     </main>
-  );
-};
-
-const StockDetail = () => {
-  return (
-    <Suspense fallback={<Spinner animation="border" className={Style.loadingIndicator} />}>
-      <StockDetailContent />
-    </Suspense>
   );
 };
 

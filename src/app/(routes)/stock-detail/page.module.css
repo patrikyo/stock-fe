@@ -1,3 +1,55 @@
+
+.skelotonHeaderOne {
+    width: 214px;
+    height: 38px;
+    background-color: rgb(201, 201, 201);
+    margin: 0 auto calc(0.5rem + 10px) auto;
+}
+
+.skeletonGauge {
+    width: 250px;
+    height: 125px;
+    background-color: rgb(201, 201, 201);
+    margin: 0 auto 4% auto;
+    position: relative;
+}
+
+.skeletonHeaderTwo {
+    width: 104px;
+    height: 29px;
+    background-color: rgb(201, 201, 201);
+    margin: 0 auto calc(0.5rem + 10px) auto;
+}
+
+.skeletonStockKeyMetricsList {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    max-width: 268px;
+    margin: 0px auto 10px auto;
+}
+
+.skeletonStockKeyMeteric {
+    width: 50%;
+    height: 30px;
+    background-color: rgb(201, 201, 201);
+    list-style: none;
+}
+
+.skeletonStockKeyMetericValue {
+    width: 40%;
+    height: 30px;
+    background-color: rgb(201, 201, 201);
+    list-style: none;
+}
+
+.skeletonBackLink {
+    background-color: rgb(201, 201, 201);
+    width: 126px;
+    height: 45px;
+    margin: 0 auto;
+}
+
 .mainContainer {
     width: 80%;
     margin: 10% auto;  
@@ -84,4 +136,18 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+    .mainContainer {
+        margin: 2% auto;
+    }  
+
+    .stockDetailSection {
+        margin-bottom: 2%;
+    }
+
+    .stockDetailSection:first-of-type {
+        margin-bottom: 4%;
+    }
 }

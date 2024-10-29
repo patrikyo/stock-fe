@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0 0 15% 0;
+    padding: 0 3% 15% 3%;
     border-bottom: 2px solid #b6b6b6;
 }
 
@@ -117,7 +117,7 @@
 }
 
 /*XXL screen*/
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 576px) {
     .stockDataFetchBtn {
         padding: 2% 4%;
         margin: 1% 0;

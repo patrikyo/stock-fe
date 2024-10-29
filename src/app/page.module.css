@@ -51,7 +51,11 @@
 
 
 /*XXL screen*/
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 576px) {
+    .stockContentContainer {
+        margin: 2% auto;
+    }
+
    .addStockContainer {
         margin: 0;
         margin-bottom: 3%;
@@ -72,11 +76,5 @@
 
     .loadingIndicator {
         scale: 3;
-    }
-}
-/*XXL screen*/
-@media screen and (max-width: 1400px) {
-    .stockContentContainer {
-        margin: 2% auto;
     }
 }
