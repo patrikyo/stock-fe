@@ -1,15 +1,13 @@
 .skeletonLoader {
     width:100%;
     min-height: 422px;
-    margin-bottom: 50px;
     border-bottom: 2px solid rgb(201, 201, 201);    
 }
 
 .skeletonImage {
     width: 150px;
     height: 150px;
-    margin: 0 auto;
-    margin-bottom: 12px;
+    margin: 0 auto 1.1rem auto;
     border-radius: 10px;
     background-color: rgb(201, 201, 201);
 }
@@ -19,7 +17,7 @@
     width: 95%;
     background-color: rgb(201, 201, 201);
     margin: 0 auto;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .skeletonPrice, .skeletonProcentage, .skeletonUpdateTime, .skeletonLink {
@@ -27,21 +25,28 @@
     width: 50%;
     background-color: rgb(201, 201, 201);
     margin: 0 auto;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .skeletonUpdateTime {
     height: 24px;
+    margin-bottom: 0;
+    width: 70%
 }
 
-.skeletonProcentage {
-    width: 30%;
+.skeletonPrice {
+    width: 40%;
+}
+
+.skeletonProcentage{
+    width: 29%;
 }
 
 .skeletonBtn {
     background-color: rgb(201, 201, 201);
-    margin: 20px auto;
+    margin: 35px auto 32px auto;
     width: 80%;
+    max-width: 254px;
     min-height: 56px;
     border-radius: 30px;
     border: 0px solid #5858ec;
@@ -50,7 +55,7 @@
 .skeletonLink {
     width: 35%;
     margin-top: 12px;
-    margin-bottom: 63px;
+    margin-bottom: 58px;
 }
 
 .stockDetailList {
@@ -116,15 +121,48 @@
 
 }
 
-/*XXL screen*/
 @media screen and (min-width: 576px) {
+
+    .skeletonUpdateTime {
+        width: 35%
+    }
+
+    .skeletonBtn {
+        margin-top: 18px;
+        margin-bottom: 3.7%;
+    }
+
+    .skeletonPrice, .skeletonProcentage, .skeletonUpdateTime, .skeletonLink {
+        margin-bottom: 9px;
+    }
+
+    .skeletonTitle {
+        width: 50%;
+        height: 30px;
+        margin-bottom: 15px;
+    }
+    
     .stockDataFetchBtn {
         padding: 2% 4%;
         margin: 1% 0;
         width: 30%;
     }
 
+    .skeletonLink {
+        width: 15%;
+        margin-top: 12px;
+        margin-bottom: 42px;
+    }
+
+    .skeletonPrice {
+        width: 17%;
+    }
+    
+    .skeletonProcentage{
+        width: 11%;
+    }
+
     .stockDetailList {
-        padding: 4%;
+        padding-bottom: 5%;
     }
 }
