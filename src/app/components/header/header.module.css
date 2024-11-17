@@ -3,16 +3,18 @@
     text-align: center;
     background-color: #5858ec;
     color: #fff;
-    margin-bottom: 3%;
 }
 
 .headerTitle {
-    padding: 5% 0;
+    padding: 3% 0;
+    margin: 0;
 }
 
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 576px) { 
     .header {
-        margin-bottom: 2%;
+        width: 70%;
+        border-radius: 0 0 10px 10px;
+        margin: 0 auto;
     }
 }

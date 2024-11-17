@@ -10,7 +10,7 @@
     width: 250px;
     height: 125px;
     background-color: rgb(201, 201, 201);
-    margin: 0 auto 4% auto;
+    margin: 0 auto 20% auto;
     position: relative;
 }
 
@@ -18,17 +18,18 @@
     width: 104px;
     height: 29px;
     background-color: rgb(201, 201, 201);
-    margin: 0 auto calc(0.5rem + 10px) auto;
+    margin: 0 auto 25px auto;
 }
 
 .skeletonList {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    padding: 0;
 }
 
 .skeletonStockKeyMetricsList {
     display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 5px;
     max-width: 268px;
     margin: 0px auto 10px auto;
 }
@@ -55,7 +56,7 @@
 }
 
 .mainContainer {
-    width: 80%;
+    width: 82%;
     margin: 10% auto;  
 }
 
@@ -64,7 +65,7 @@
     flex-direction: column;
     gap: 15px;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 30px;
 } 
 
 .stockDetailSection:first-of-type {
@@ -145,13 +146,21 @@
 @media screen and (min-width: 576px) {
     .mainContainer {
         margin: 2% auto;
+        width: 80%;
     }  
-
-    .stockDetailSection {
-        margin-bottom: 2%;
-    }
 
     .stockDetailSection:first-of-type {
         margin-bottom: 4%;
+    }
+
+    .skeletonGauge {
+        margin: 0 auto 4% auto;
+    }
+
+    .skeletonBackLink {
+        background-color: rgb(201, 201, 201);
+        width: 126px;
+        height: 45px;
+        margin: 0 auto;
     }
 }

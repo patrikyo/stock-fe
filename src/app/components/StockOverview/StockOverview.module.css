@@ -13,7 +13,7 @@
 }
 
 .skeletonTitle {
-    height: 60px;
+    height: 2.5rem;
     width: 95%;
     background-color: rgb(201, 201, 201);
     margin: 0 auto;
@@ -21,17 +21,18 @@
 }
 
 .skeletonPrice, .skeletonProcentage, .skeletonUpdateTime, .skeletonLink {
-    height: 30px;
+    height: 1.5rem;
     width: 50%;
     background-color: rgb(201, 201, 201);
     margin: 0 auto;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .skeletonUpdateTime {
-    height: 24px;
+    height: 1rem;
     margin-bottom: 0;
-    width: 70%
+    width: 70%;
+    margin-top: 1rem;
 }
 
 .skeletonPrice {
@@ -44,25 +45,24 @@
 
 .skeletonBtn {
     background-color: rgb(201, 201, 201);
-    margin: 35px auto 32px auto;
+    margin: 1.5rem auto 26px auto;
     width: 80%;
-    max-width: 254px;
+    max-width: 210px;
     min-height: 56px;
-    border-radius: 30px;
-    border: 0px solid #5858ec;
+    border-radius: 1.5rem;
+    border: 0 solid #5858ec;
 }
 
 .skeletonLink {
     width: 35%;
-    margin-top: 12px;
-    margin-bottom: 58px;
+    margin-bottom: 44px;
 }
 
 .stockDetailList {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.5rem;
     padding: 0 3% 15% 3%;
     border-bottom: 2px solid #b6b6b6;
 }
@@ -72,7 +72,7 @@
     padding: 4%;
     margin: 5% 0;
     width: 70%;
-    border-radius: 30px;
+    border-radius: 1.5rem;
     font-size: 1rem;
     border: 0px solid #5858ec;
     background-color: #5858ec;
@@ -84,12 +84,12 @@
 }
 
 .positiveIndicator {
-    margin-left: 10px;
+    margin-left: 0.5rem;
     color: #15803c;
 }
 
 .negativeIndicator {
-    margin-left: 10px;
+    margin-left: 0.5rem;
     color: #d0184d;
 }
 
@@ -100,7 +100,7 @@
 .loadingIndicator {
     color: #5858ec;
     scale: 1.3;    
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .stockLink {
@@ -122,24 +122,25 @@
 }
 
 @media screen and (min-width: 576px) {
-
     .skeletonUpdateTime {
-        width: 35%
+        width: 35%;
+        height: 1.2rem;
+        margin-top: 0;
     }
 
     .skeletonBtn {
-        margin-top: 18px;
-        margin-bottom: 3.7%;
+        max-width: 240px;
+        margin: 0.9rem auto 3.7% auto;
     }
 
     .skeletonPrice, .skeletonProcentage, .skeletonUpdateTime, .skeletonLink {
-        margin-bottom: 9px;
+        margin-bottom: 0.45rem;
     }
 
     .skeletonTitle {
         width: 50%;
-        height: 30px;
-        margin-bottom: 15px;
+        height: 1.5rem;
+        margin-bottom: 0.75rem;
     }
     
     .stockDataFetchBtn {
@@ -150,8 +151,8 @@
 
     .skeletonLink {
         width: 15%;
-        margin-top: 12px;
-        margin-bottom: 42px;
+        margin-top: 0.6rem;
+        margin-bottom: 1.9rem;
     }
 
     .skeletonPrice {
