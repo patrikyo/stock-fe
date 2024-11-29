@@ -1,5 +1,5 @@
 interface IGauge {
-    shortValue: string | "N/A"; 
+  shortValue: string | "N/A";
 }
 
 export default IGauge;

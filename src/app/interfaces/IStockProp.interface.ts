@@ -1,5 +1,5 @@
 interface IStockProp {
-    ticker: string;
+  ticker: string;
 }
 
 export default IStockProp;

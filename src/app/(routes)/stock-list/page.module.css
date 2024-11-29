@@ -1,57 +1,56 @@
 .mainContainer {
-    width: 50%;
-    margin: 10% auto;
+  width: 50%;
+  margin: 10% auto;
 }
 
 .stockList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .stockImage {
-    height: 150px;
-    width: 250px;
-    border: 3px solid #ebebeb;
-    border-radius: 10%;
-    padding: 10px;
-    object-fit: contain;
+  height: 150px;
+  width: 250px;
+  border: 3px solid #ebebeb;
+  border-radius: 10%;
+  padding: 10px;
+  object-fit: contain;
 }
 
 .backLinkContainer {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 
 .backLinkIcon {
-    color: #0e6efc;
-    scale: 1.5;
+  color: #0e6efc;
+  scale: 1.5;
 }
 
 .backLink {
-    text-decoration: none;
-    font-size: 1.5rem;
-    margin-bottom: 1%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1%;
 }
 
 @media screen and (min-width: 576px) {
-    .mainContainer {
-        width: 50%;
-        margin: 2% auto;
-    }
+  .mainContainer {
+    width: 50%;
+    margin: 2% auto;
+  }
 
-    .backLinkContainer {
-        margin-top: 5%;
-    }
-    
+  .backLinkContainer {
+    margin-top: 5%;
+  }
 }

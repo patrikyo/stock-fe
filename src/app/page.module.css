@@ -1,79 +1,78 @@
 .stockContentContainer {
-    max-width: 80%;
-    margin: 0 auto;
-    max-width: 852px;
+  max-width: 80%;
+  margin: 0 auto;
+  max-width: 852px;
 }
 
 .addStockContainer {
-    margin: 10% 0;
-    display: flex;
-    justify-content: center;
+  margin: 10% 0;
+  display: flex;
+  justify-content: center;
 }
 
 .stockOverviewList {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 .addStockLinkContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    color: #0d6efd;
-    text-decoration: none;
-    background-color: #3e63dd;
-    padding: 15px 30px;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: 500;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #0d6efd;
+  text-decoration: none;
+  background-color: #3e63dd;
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 500;
+  align-items: center;
 }
 
 .addStockBtn {
-    height: 30px;
+  height: 30px;
 }
 
 .loadingIndicatorContainer {
-   display: flex;
-   height: 50vh;
-   justify-content: center;
-   align-items: center;
-} 
-
-.loadingIndicator {
-    color: #5858ec;
-    scale: 4;   
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
 }
 
+.loadingIndicator {
+  color: #5858ec;
+  scale: 4;
+}
 
 @media screen and (min-width: 576px) {
-    .stockContentContainer {
-        margin: 2% auto;
-    }
+  .stockContentContainer {
+    margin: 2% auto;
+  }
 
-   .addStockContainer {
-        margin: 0;
-        margin-bottom: 7%;
-   }
+  .addStockContainer {
+    margin: 0;
+    margin-bottom: 7%;
+  }
 
-   .addStockLinkContainer {
-        gap: 10px;
-        padding: 1.5% 3%;
-    }
+  .addStockLinkContainer {
+    gap: 10px;
+    padding: 1.5% 3%;
+  }
 
-    .addStockBtn {
-        height: 20px;
-    }
+  .addStockBtn {
+    height: 20px;
+  }
 
-    .stockOverviewList {
-        gap: 60px;
-    }
+  .stockOverviewList {
+    gap: 60px;
+  }
 
-    .loadingIndicator {
-        scale: 3;
-    }
+  .loadingIndicator {
+    scale: 3;
+  }
 }

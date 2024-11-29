@@ -1,5 +1,5 @@
 interface ILogo {
-    ticker: string;
+  ticker: string;
 }
 
 export default ILogo;

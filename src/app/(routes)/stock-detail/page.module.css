@@ -1,166 +1,165 @@
-
 .skelotonHeaderOne {
-    width: 214px;
-    height: 38px;
-    background-color: rgb(201, 201, 201);
-    margin: 0 auto calc(0.5rem + 10px) auto;
+  width: 214px;
+  height: 38px;
+  background-color: rgb(201, 201, 201);
+  margin: 0 auto calc(0.5rem + 10px) auto;
 }
 
 .skeletonGauge {
-    width: 250px;
-    height: 125px;
-    background-color: rgb(201, 201, 201);
-    margin: 0 auto 20% auto;
-    position: relative;
+  width: 250px;
+  height: 125px;
+  background-color: rgb(201, 201, 201);
+  margin: 0 auto 20% auto;
+  position: relative;
 }
 
 .skeletonHeaderTwo {
-    width: 104px;
-    height: 29px;
-    background-color: rgb(201, 201, 201);
-    margin: 0 auto 25px auto;
+  width: 104px;
+  height: 29px;
+  background-color: rgb(201, 201, 201);
+  margin: 0 auto 25px auto;
 }
 
 .skeletonList {
-    margin-bottom: 30px;
-    padding: 0;
+  margin-bottom: 30px;
+  padding: 0;
 }
 
 .skeletonStockKeyMetricsList {
-    display: flex;
-    justify-content: flex-start;
-    gap: 5px;
-    max-width: 268px;
-    margin: 0px auto 10px auto;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  max-width: 268px;
+  margin: 0px auto 10px auto;
 }
 
 .skeletonStockKeyMeteric {
-    width: 50%;
-    height: 30px;
-    background-color: rgb(201, 201, 201);
-    list-style: none;
+  width: 50%;
+  height: 30px;
+  background-color: rgb(201, 201, 201);
+  list-style: none;
 }
 
 .skeletonStockKeyMetericValue {
-    width: 40%;
-    height: 30px;
-    background-color: rgb(201, 201, 201);
-    list-style: none;
+  width: 40%;
+  height: 30px;
+  background-color: rgb(201, 201, 201);
+  list-style: none;
 }
 
 .skeletonBackLink {
+  background-color: rgb(201, 201, 201);
+  width: 126px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.mainContainer {
+  width: 82%;
+  margin: 10% auto;
+}
+
+.stockDetailSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.stockDetailSection:first-of-type {
+  margin-bottom: 20%;
+}
+
+.stockDetailHeader {
+  color: #5858ec;
+  font-size: 1.2rem;
+}
+
+.stockKeyMetricsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: wrap;
+  gap: 10px;
+}
+
+.loadingIndicator {
+  color: #5858ec;
+  margin: 0 auto;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.stockKeyMetricItem {
+  flex: 1;
+  max-width: 30px;
+}
+
+.stockShortValue {
+  color: #636363;
+}
+
+.stockKeyMeteric {
+  color: #5858ec;
+  font-weight: 600;
+}
+
+.stockKeyMetericValue {
+  color: #555555;
+  font-weight: 600;
+}
+
+.backLinkContainer {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.backLinkIcon {
+  color: #0e6efc;
+  scale: 1.5;
+}
+
+.backLink {
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.centerContent {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .mainContainer {
+    margin: 2% auto;
+    width: 80%;
+  }
+
+  .stockDetailSection:first-of-type {
+    margin-bottom: 4%;
+  }
+
+  .skeletonGauge {
+    margin: 0 auto 4% auto;
+  }
+
+  .skeletonBackLink {
     background-color: rgb(201, 201, 201);
     width: 126px;
     height: 45px;
     margin: 0 auto;
-}
-
-.mainContainer {
-    width: 82%;
-    margin: 10% auto;  
-}
-
-.stockDetailSection {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin-bottom: 30px;
-} 
-
-.stockDetailSection:first-of-type {
-    margin-bottom: 20%;
-}
-
-.stockDetailHeader {
-    color: #5858ec;
-    font-size: 1.2rem;
-}
-
-.stockKeyMetricsList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: wrap;
-    gap: 10px;
-}
-
-.loadingIndicator {
-    color: #5858ec;
-    margin: 0 auto;
-}
-
-.alignCenter {
-    text-align: center;
-}
-
-.stockKeyMetricItem {
-    flex: 1;
-    max-width: 30px;
-}
-
-.stockShortValue {
-    color: #636363;
-}
-
-.stockKeyMeteric {
-    color: #5858ec;
-    font-weight: 600;
-}
-
-.stockKeyMetericValue {
-    color: #555555;
-    font-weight: 600;
-}
-
-.backLinkContainer {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.backLinkIcon {
-    color: #0e6efc;
-    scale: 1.5;
-}
-
-.backLink {
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-
-.centerContent {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-@media screen and (min-width: 576px) {
-    .mainContainer {
-        margin: 2% auto;
-        width: 80%;
-    }  
-
-    .stockDetailSection:first-of-type {
-        margin-bottom: 4%;
-    }
-
-    .skeletonGauge {
-        margin: 0 auto 4% auto;
-    }
-
-    .skeletonBackLink {
-        background-color: rgb(201, 201, 201);
-        width: 126px;
-        height: 45px;
-        margin: 0 auto;
-    }
+  }
 }

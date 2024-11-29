@@ -1,20 +1,19 @@
 .header {
-    width: 100%;
-    text-align: center;
-    background-color: #5858ec;
-    color: #fff;
+  width: 100%;
+  text-align: center;
+  background-color: #5858ec;
+  color: #fff;
 }
 
 .headerTitle {
-    padding: 3% 0;
-    margin: 0;
+  padding: 3% 0;
+  margin: 0;
 }
 
-
-@media screen and (min-width: 576px) { 
-    .header {
-        width: 70%;
-        border-radius: 0 0 10px 10px;
-        margin: 0 auto;
-    }
+@media screen and (min-width: 576px) {
+  .header {
+    width: 70%;
+    border-radius: 0 0 10px 10px;
+    margin: 0 auto;
+  }
 }

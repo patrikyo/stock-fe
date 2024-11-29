@@ -1,4 +1,4 @@
-'use client';  // Ensures this is a Client Component
+"use client";
 
 import Gauge from "@/app/components/Gauge/Gauge";
 import Style from "./page.module.css";
@@ -31,21 +31,26 @@ const SkeletonLoader = () => (
 
 const StockDetailContent = () => {
   const searchParams = useSearchParams();
-  const ticker: string | null = searchParams.get('ticker');
+  const ticker: string | null = searchParams.get("ticker");
   const { data, loading, error } = useFetchMetric(ticker);
 
   const getMetricsList = (data: IStockMetrics | null) => {
     if (data) {
-      const metricsList = (Object.keys(data) as (keyof IStockMetrics)[]).map((ele, i) => {
-        if (data[ele] !== "N/A") {
-          return (
-            <li key={i} className={Style.stockKeyMeteric}>
-              {translateMetric(ele)}: <span className={Style.stockKeyMetericValue}>{formatMetric(ele, data[ele])}</span>
-            </li>
-          );
-        }
-        return null;
-      }).filter(item => item !== null);
+      const metricsList = (Object.keys(data) as (keyof IStockMetrics)[])
+        .map((ele, i) => {
+          if (data[ele] !== "N/A") {
+            return (
+              <li key={i} className={Style.stockKeyMeteric}>
+                {translateMetric(ele)}:{" "}
+                <span className={Style.stockKeyMetericValue}>
+                  {formatMetric(ele, data[ele])}
+                </span>
+              </li>
+            );
+          }
+          return null;
+        })
+        .filter((item) => item !== null);
 
       return metricsList;
     }
@@ -56,23 +61,35 @@ const StockDetailContent = () => {
     <>
       {loading ? (
         <SkeletonLoader />
-      ) : data && (
-        <>
-          <section className={Style.stockDetailSection}>
-            <h2 className={Style.stockDetailHeader}>Blankning: <span className={Style.stockShortValue}>{data?.shortSelling}%</span></h2>
-            <Gauge shortValue={data?.shortSelling || "0"} />
-          </section>
-          <section className={Style.stockDetailSection}>
-            <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
-            <ul className={Style.stockKeyMetricsList}>
-              {getMetricsList(data)}
-            </ul>
-          </section>
-          <div className={Style.backLinkContainer}>
-            <FontAwesomeIcon className={Style.backLinkIcon} icon={faChevronLeft} />
-            <Link className={Style.backLink} href="/">Tillbaka</Link>
-          </div>
-        </>
+      ) : (
+        data && (
+          <>
+            <section className={Style.stockDetailSection}>
+              <h2 className={Style.stockDetailHeader}>
+                Blankning:{" "}
+                <span className={Style.stockShortValue}>
+                  {data?.shortSelling}%
+                </span>
+              </h2>
+              <Gauge shortValue={data?.shortSelling || "0"} />
+            </section>
+            <section className={Style.stockDetailSection}>
+              <h2 className={Style.stockDetailHeader}>Nyckeltal</h2>
+              <ul className={Style.stockKeyMetricsList}>
+                {getMetricsList(data)}
+              </ul>
+            </section>
+            <div className={Style.backLinkContainer}>
+              <FontAwesomeIcon
+                className={Style.backLinkIcon}
+                icon={faChevronLeft}
+              />
+              <Link className={Style.backLink} href="/">
+                Tillbaka
+              </Link>
+            </div>
+          </>
+        )
       )}
     </>
   );

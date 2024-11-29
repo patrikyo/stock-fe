@@ -1,5 +1,5 @@
 interface IStockOverview {
-    ticker: string;
-};
+  ticker: string;
+}
 
 export default IStockOverview;

@@ -1,133 +1,134 @@
 .skeletonHeader {
-    width: 90%;
-    height: 57px;
-    background-color: rgb(201, 201, 201);
-    margin: 0 auto 1.5rem auto;
+  width: 90%;
+  height: 57px;
+  background-color: rgb(201, 201, 201);
+  margin: 0 auto 1.5rem auto;
 }
 
 .skeletonImage {
-    height: 150px;
-    max-width: 150px;
-    border-radius: 0.5rem;
-    background-color: rgb(201, 201, 201);
-    margin: 0 auto 1.5rem auto;
+  height: 150px;
+  max-width: 150px;
+  border-radius: 0.5rem;
+  background-color: rgb(201, 201, 201);
+  margin: 0 auto 1.5rem auto;
 }
 
 .skeletonBtn {
-    border-radius: 1.5rem;
-    height: 3rem;
-    width: 100%;
-    max-width: 232px;
-    background-color: rgb(201, 201, 201);
-    margin: 30px auto 54px auto;
+  border-radius: 1.5rem;
+  height: 3rem;
+  width: 100%;
+  max-width: 232px;
+  background-color: rgb(201, 201, 201);
+  margin: 30px auto 54px auto;
 }
 
 .skeletonDivider {
-    width: 100%;
-    height: 0.1rem;
-    background-color: rgb(201, 201, 201);
+  width: 100%;
+  height: 0.1rem;
+  background-color: rgb(201, 201, 201);
 }
 
-.stockListContainer, .stockList {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
+.stockListContainer,
+.stockList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 
 .stockList {
-    gap: 30px;
+  gap: 30px;
 }
 
 .stockHeader {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 30px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .stockListItem {
-    background-color: #fafafa;
-    box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
-    border-radius: 10px;
+  background-color: #fafafa;
+  box-shadow: 0px 0px 10px 5px rgba(188, 188, 188, 0.3);
+  border-radius: 10px;
 }
 
 .addStockIcon {
-    height: 30px;
-    color: #0d6efd;
+  height: 30px;
+  color: #0d6efd;
 }
 
 .stockAddBtn {
-    border: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fafafa;
-    gap: 10px;
-    color: #0d6efd;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fafafa;
+  gap: 10px;
+  color: #0d6efd;
 }
 
 .stockAddBtn:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .addStockCopy {
-    font-size: 1.3rem;   
+  font-size: 1.3rem;
 }
 
 .stockDivider {
-    width: 70vw;
-    border-top: 3px solid #b6b6b6;
-    margin: 0;
+  width: 70vw;
+  border-top: 3px solid #b6b6b6;
+  margin: 0;
 }
 
 .loadingIndicator {
-    color: #5858ec;
-    scale: 1.3;    
-    margin-bottom: 20px;
+  color: #5858ec;
+  scale: 1.3;
+  margin-bottom: 20px;
 }
 
 .addStockContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    color: #0d6efd;
-    text-decoration: none;
-    background-color: #3e63dd;
-    padding: 15px 30px;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: 500;
-    align-items: center;
-    border: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  color: #0d6efd;
+  text-decoration: none;
+  background-color: #3e63dd;
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 500;
+  align-items: center;
+  border: none;
 }
 
 .addStockBtn {
-    height: 30px;
+  height: 30px;
 }
 
 @media screen and (min-width: 576px) {
-    .skeletonHeader {
-        width: 100%;
-        height: 1.4rem;
-        max-width: 26rem;
-    }
-    
-    .skeletonImage {
-        height: 150px;
-        max-width: 150px;
-        margin-bottom: 1.5rem;
-    }
-    
-    .skeletonBtn {
-        width: 100%; 
-        background-color: rgb(201, 201, 201);
-        margin: 0 auto 2.6rem auto;
-    }
-    
-    .skeletonDivider {
-        width: 70vw;
-    }
+  .skeletonHeader {
+    width: 100%;
+    height: 1.4rem;
+    max-width: 26rem;
+  }
+
+  .skeletonImage {
+    height: 150px;
+    max-width: 150px;
+    margin-bottom: 1.5rem;
+  }
+
+  .skeletonBtn {
+    width: 100%;
+    background-color: rgb(201, 201, 201);
+    margin: 0 auto 2.6rem auto;
+  }
+
+  .skeletonDivider {
+    width: 70vw;
+  }
 }
